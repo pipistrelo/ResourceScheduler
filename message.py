@@ -1,12 +1,13 @@
 class Message:
-   """Message class to handle message object""" 
+    """Message class to handle message object""" 
     
     ## @param msgGroupId is group id in which message belongs
     ## @param msgBody is body of message
     ## @param msgsState is the state of message <created|wait|completed> created is used when message is created, wait when message is being processed, completed when message 
     ## has already been processed
     def __init__(self,msgRef=None,msgGroupId=None,msgBody=None,msgState="created"):
-        assert isinstance(msgGroupId, int) , "ERROR: msgGroupId has to be integer"
+        # special messages has group id -1 e.g. cancelation, termination, updateRule
+        assert msgGroupId > -2 , "ERROR: msgGroupId has to be gretaer than -2 : -1 for special messages otherwise for other group of messages should be an  integer"
         assert isinstance(msgRef,str) , "ERROR: msgRef has to be string"
         assert isinstance(msgBody,str) , "ERROR: msgBody has to be string"
         assert isinstance(msgState,str) , "ERROR: msgState has to be sring" 
@@ -40,7 +41,7 @@ class Message:
    
     def getMsgBody(self):
         if self._message :
-            return self._message["msgBody"]
+            return self._message["body"]
         else : 
             return None
 
@@ -49,6 +50,7 @@ class Message:
             return self._message["state"]
         else : 
             return None
+    
 
     def updateMsgState(self,state):
         if state== "created" or state=="sent" or state=="completed":
@@ -57,4 +59,5 @@ class Message:
            print "Wrong state provided It should be <created | sent | completed> "
 
     def completed(self):
-        self._message["state"]="completed" 
+        self._message["state"]="completed"   
+
