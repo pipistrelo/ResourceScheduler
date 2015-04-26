@@ -16,7 +16,7 @@ class gwInterface:
      def send(self,msg):
          msg.updateMsgState("sent")
          gwQueue.put(msg)
-
+         
 
 
 class ThreadGwSenderToResource(threading.Thread):
@@ -29,6 +29,5 @@ class ThreadGwSenderToResource(threading.Thread):
         while True:
            msg = self._queue.get()
            self._resourceQueue.put(msg)
-           now = datetime.datetime.now()
            logging.info("Thread GW send msg = %s to resource",msg.getMessage())
            self._queue.task_done()
