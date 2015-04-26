@@ -59,7 +59,7 @@ ruleId = 4 : represents ruled id for cancelation messages, that needs to be sepa
 ruleId=5 : represents ruled id for termination messages, similiar as cancelation, only in msgBody the key word is changed to "termination", also the list is used to defined groups for which messages will be teraminated
 
 
-In order to run application:
+In order to run application, use this command:
 
 python main.py
 
