@@ -18,7 +18,7 @@ def fillMsgGeneratorQueue(maxStep=100,maxBurstSize=5,msgGroupIdRange=3):
     assert isinstance(msgGroupIdRange, int) , "ERROR: msgGroupIdRange has to be integer"
     assert msgGroupIdRange > 0  , "ERROR: msgGroupIdRange has to be positive integer"
    
-    ## queue item defines a burst size for each generetion step
+    ## queue item defines a burst size for each generation step
     if msgGeneratorQueue.empty():
         for j in range(maxStep):
             msgGeneratorQueue.put([random.randint(1,maxBurstSize),random.randint(1,msgGroupIdRange)])
