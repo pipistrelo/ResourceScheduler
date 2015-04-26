@@ -9,7 +9,9 @@ config.py file provides simple configuration of Resource Scheduler application.
 Here is a quick overview of configurable variables:
 
 maxStep         : defines maximum number of message generation steps
+
 maxBurstSize    : defines maximum number of messages generated in one step
+
 msgGroupIdRange : defines maximum number of used group ids
 
 timeSleepMaxGenerator : represents max time value for generated time variates representing  a time between two burst size group of messages send to Rule Queue
