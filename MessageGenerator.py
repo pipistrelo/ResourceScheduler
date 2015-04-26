@@ -5,7 +5,6 @@ import threading
 import datetime
 import time
 from message import Message
-from generalQueue import GeneralQueue
 from schedulerLogs import *
 
 msgGeneratorQueue = Queue.Queue(maxsize=0)
