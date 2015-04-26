@@ -3,7 +3,6 @@ import threading
 import datetime
 import random
 import time
-from generalQueue import GeneralQueue
 from MessageGenerator import fillMsgGeneratorQueue, MessageGenerator, ThreadMessageGeneratorSender, msgGeneratorQueue
 from message import Message
 from resources import  resourceQueue
