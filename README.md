@@ -5,7 +5,8 @@ In order to test or simulate this application, Message Class is created.
 Where message has the following structure for example:
 
 ::
-{'body': '30818QoGBB', 'state': 'created', 'ref': '30818QoGBB', 'groupId': 7}
+
+        {'body': '30818QoGBB', 'state': 'created', 'ref': '30818QoGBB', 'groupId': 7}
 
 config.py file provides simple configuration of Resource Scheduler application. 
 Here is a quick overview of configurable variables:
